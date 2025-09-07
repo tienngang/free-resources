@@ -74,7 +74,7 @@ while true; do
   sudo mkdir -p "$MOUNT_POINT"
   sudo ntfs-3g "$DEVICE" "$MOUNT_POINT" \
     -olocal -oallow_other -o auto_xattr -o streams_interface=openxattr \
-    -o volname="$VOLNAME"
+    -o volname="$VOLNAME" -o big_writes
 
   if [ $? -eq 0 ]; then
     echo "✅ Đã mount lại thành công: $MOUNT_POINT"
